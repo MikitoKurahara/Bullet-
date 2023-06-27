@@ -356,6 +356,11 @@ public class InvadersGameClient extends Application {
             gc.fillText("Press E to exit    Press R to restart", WIDTH / 2 - 120, HEIGHT / 2 + 160);
             return;
         } else { // 実行時
+        // 球の描画(青)
+        for(Bullet bullet : bullets){
+            bullet.draw(gc);
+        }
+
             // 自機の描画(緑)
             gc.setFill(Color.GREEN);
             gc.fillRect(player.getX() - 25, player.getY() - 12.5, 50, 25);
@@ -369,10 +374,7 @@ public class InvadersGameClient extends Application {
                 }
             }
         
-            // 球の描画(青)
-        for(Bullet bullet : bullets){
-            bullet.draw(gc);
-        }
+        
         
         //モードの表示
             bullets.get(0).showmode(gc);

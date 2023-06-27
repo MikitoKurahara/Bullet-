@@ -45,7 +45,7 @@ public class Bullet{
                 this.range=700;
             break;
         }
-        this.damage=this.speed*this.range;
+        this.damage=1/this.speed*this.range;
         switch(amode%3){
             case 0:
                 this.pier=5;
@@ -73,7 +73,7 @@ public class Bullet{
           return;
         }
         gc.setFill(Color.BLUE);
-        gc.fillOval(this.x, this.y, 20, 30);
+        gc.fillOval(this.x, this.y, 10, 20);
         
         this.y-=this.speed;
         this.range-=this.speed;
